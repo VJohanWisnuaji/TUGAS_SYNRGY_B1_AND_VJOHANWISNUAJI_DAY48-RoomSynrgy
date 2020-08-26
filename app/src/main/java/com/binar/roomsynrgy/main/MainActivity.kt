@@ -26,10 +26,11 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.Listener {
         presenter.fetchData()
     }
 
-    override fun showItemList(listItem: List<Item>){
+    override fun showItemList(listItem: List<Item>) {
         runOnUiThread {
             val adapter = ItemAdapter(listItem, presenter)
-            recyclerView.layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
+            recyclerView.layoutManager =
+                LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
             recyclerView.adapter = adapter
         }
     }
